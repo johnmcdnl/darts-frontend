@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Target} from "../Target";
+import {Component, OnInit} from "@angular/core";
+import {Http} from "@angular/http";
 
 @Component({
     selector: 'app-retrieve',
@@ -8,13 +8,20 @@ import {Target} from "../Target";
 })
 export class TargetsRetrieveComponent implements OnInit {
 
-    constructor() {
+    constructor(private http: Http) {
     }
 
     ngOnInit() {
+        this.retrieveUser("johnmcdnl")
     }
 
-    target: Target;
 
-
+    retrieveUser(user: string) {
+        let targetCreateEndPoint = "http://localhost:4500/darts/api/targets/users/" + user;
+        this.http.get(targetCreateEndPoint,)
+            .subscribe(
+                data => alert('Retrieved some data'),
+                error => alert(error.json().message)
+            );
+    }
 }
