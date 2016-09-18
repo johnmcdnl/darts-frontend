@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Http} from "@angular/http";
+import {Target} from "../Target";
 
 @Component({
     selector: 'app-create',
@@ -28,11 +29,4 @@ export class TargetCreateComponent implements OnInit {
             );
     }
 
-}
-
-class Target {
-    username: string;
-    targetName: string;
-    attempts: number;
-    success: number
 }

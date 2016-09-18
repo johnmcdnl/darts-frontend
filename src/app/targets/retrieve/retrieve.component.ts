@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Target} from "../Target";
 
 @Component({
-  selector: 'app-retrieve',
-  templateUrl: './retrieve.component.html',
-  styleUrls: ['./retrieve.component.css']
+    selector: 'app-retrieve',
+    templateUrl: './retrieve.component.html',
+    styleUrls: ['./retrieve.component.css']
 })
 export class TargetsRetrieveComponent implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
+
+    target: Target;
+
 
 }
