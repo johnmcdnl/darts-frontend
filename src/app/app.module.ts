@@ -4,16 +4,17 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
+import {LoginComponent} from './auth/login/login.component';
+import {RegisterComponent} from './auth/register/register.component';
 import {appRoutingProviders, routing} from "./app.routing";
-import {FORM_DIRECTIVES} from "@angular/forms/src/directives";
+import { CreateComponent } from './targets/create/create.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        CreateComponent
     ],
     imports: [
         BrowserModule,

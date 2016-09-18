@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Http} from "@angular/http";
+import {User} from "../../domain/user";
 
 @Component({
     selector: 'app-register',
@@ -17,19 +18,13 @@ export class RegisterComponent implements OnInit {
 
     user: User = new User();
 
-    registerUser() {
-        let CREATE_USER_ENDPOINT = "http\://localhost:4500/darts/api/auth/register";
+    register() {
+        let registerEndpoint = "http://localhost:4500/darts/api/auth/register";
         let data = JSON.stringify(this.user);
-        console.log(CREATE_USER_ENDPOINT, data);
-        this.http.post(CREATE_USER_ENDPOINT, data)
+        this.http.post(registerEndpoint, data)
             .subscribe(
-                data => alert('Your account has been created!'),
+                data => alert('Successful Register!'),
                 error => alert(error.json().message)
             );
     }
-}
-
-class User {
-    username: string;
-    password: string;
 }
