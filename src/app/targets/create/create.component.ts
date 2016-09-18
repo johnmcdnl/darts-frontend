@@ -6,7 +6,7 @@ import {Http} from "@angular/http";
     templateUrl: './create.component.html',
     styleUrls: ['./create.component.css']
 })
-export class CreateComponent implements OnInit {
+export class TargetCreateComponent implements OnInit {
 
 
     target: Target;
@@ -23,7 +23,7 @@ export class CreateComponent implements OnInit {
         let data = JSON.stringify(this.target);
         this.http.post(targetCreateEndPoint, data)
             .subscribe(
-                data => alert('Successful login'),
+                data => alert('Created Target'),
                 error => alert(error.json().message)
             );
     }
