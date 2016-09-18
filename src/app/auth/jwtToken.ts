@@ -1,4 +1,4 @@
 export class JwtToken {
     tokenType: string;
-    accessToken: string;
+    id_token: string;
 }

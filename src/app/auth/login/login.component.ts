@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
         this.http
             .post(loginEndPoint, data)
             .subscribe(
-                response => this.auth.storeToken(response.json().accessToken),
+                response => this.auth.storeToken(response.json().id_token),
                 err => console.log("error")
             );
     }
