@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './retrieve.component.html',
   styleUrls: ['./retrieve.component.css']
 })
-export class RetrieveComponent implements OnInit {
+export class TargetsRetrieveComponent implements OnInit {
 
   constructor() { }
 
