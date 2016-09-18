@@ -9,7 +9,6 @@ import {Target} from "../Target";
 })
 export class TargetCreateComponent implements OnInit {
 
-
     target: Target;
 
     constructor(private http: Http) {
