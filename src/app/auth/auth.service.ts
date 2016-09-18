@@ -5,6 +5,10 @@ export class Auth {
         return tokenNotExpired();
     }
 
+    static getJWTToken(): any {
+        return "Bearer " + localStorage.getItem("id_token")
+    }
+
     storeToken(token: string) {
         localStorage.setItem("id_token", token);
         return true
