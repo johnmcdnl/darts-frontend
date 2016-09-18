@@ -5,7 +5,7 @@ import {Http} from "@angular/http";
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css']
+    styleUrls: ['../auth.component.css']
 })
 export class LoginComponent implements OnInit {
     user: User;
