@@ -8,6 +8,9 @@ import {RegisterComponent} from "./auth/register/register.component";
 import {appRoutingProviders, routing} from "./app.routing";
 import {TargetCreateComponent} from "./targets/create/create.component";
 import {TargetsRetrieveComponent} from "./targets/retrieve/retrieve.component";
+import {AUTH_PROVIDERS} from "angular2-jwt";
+import {AuthGuard} from "./auth/auth-guard.service";
+import {Auth} from "./auth/auth.service";
 
 @NgModule({
     declarations: [
@@ -23,7 +26,7 @@ import {TargetsRetrieveComponent} from "./targets/retrieve/retrieve.component";
         HttpModule,
         routing
     ],
-    providers: [appRoutingProviders],
+    providers: [appRoutingProviders, AUTH_PROVIDERS, AuthGuard, Auth],
     bootstrap: [AppComponent]
 })
 export class AppModule {

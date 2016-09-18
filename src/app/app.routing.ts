@@ -4,14 +4,14 @@ import {RegisterComponent} from "./auth/register/register.component";
 import {ModuleWithProviders} from "@angular/core";
 import {TargetCreateComponent} from "./targets/create/create.component";
 import {TargetsRetrieveComponent} from "./targets/retrieve/retrieve.component";
+import {AuthGuard} from "./auth/auth-guard.service";
 
 const appRoutes: Routes = [
     //TODO break-out into sub routers
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
-    {path: 'targets', component: TargetCreateComponent},
-    {path: 'targets/create', component: TargetCreateComponent},
-    {path: 'targets/retrieve', component: TargetsRetrieveComponent},
+    {path: 'targets/create', component: TargetCreateComponent, canActivate: [AuthGuard]},
+    {path: 'targets/retrieve', component: TargetsRetrieveComponent, canActivate: [AuthGuard]},
     {path: '', component: RegisterComponent},
 ];
 
