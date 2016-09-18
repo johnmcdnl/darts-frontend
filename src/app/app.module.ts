@@ -7,14 +7,16 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from './auth/login/login.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {appRoutingProviders, routing} from "./app.routing";
-import { TargetCreateComponent } from './targets/create/create.component';
+import {TargetCreateComponent} from './targets/create/create.component';
+import {RetrieveComponent} from './targets/retrieve/retrieve.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
         RegisterComponent,
-        TargetCreateComponent
+        TargetCreateComponent,
+        RetrieveComponent,
     ],
     imports: [
         BrowserModule,

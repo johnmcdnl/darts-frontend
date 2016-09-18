@@ -2,7 +2,7 @@
     <form class="form-auth" (ngSubmit)="create()">
         <h2 class="form-auth-heading">Create Target Score</h2>
         <input type="text" id="username" [(ngModel)]="target.username" name="username" class="form-control" placeholder="username" required="" autofocus="">
-        <input type="password" id="targetName" [(ngModel)]="target.targetName" name="targetName" class="form-control" placeholder="targetName" required="">
+        <input type="text" id="targetName" [(ngModel)]="target.targetName" name="targetName" class="form-control" placeholder="targetName" required="">
         <input type="number" id="attempts" [(ngModel)]="target.attempts" name="attempts" class="form-control" placeholder="attempts" required="">
         <input type="number" id="success" [(ngModel)]="target.success" name="success" class="form-control" placeholder="success" required="">
 
