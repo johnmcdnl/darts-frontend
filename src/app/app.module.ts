@@ -11,6 +11,7 @@ import {TargetsRetrieveComponent} from "./targets/retrieve/retrieve.component";
 import {AUTH_PROVIDERS} from "angular2-jwt";
 import {AuthGuard} from "./auth/auth-guard.service";
 import {Auth} from "./auth/auth.service";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,7 @@ import {Auth} from "./auth/auth.service";
         LoginComponent,
         RegisterComponent,
         TargetCreateComponent,
-        TargetsRetrieveComponent,
+        TargetsRetrieveComponent, DashboardComponent,
     ],
     imports: [
         BrowserModule,

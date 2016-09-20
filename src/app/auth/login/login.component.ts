@@ -2,8 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {User} from "../../domain/user";
 import {Http} from "@angular/http";
 import {Auth} from "../auth.service";
-import {JwtToken} from "../jwtToken";
-import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-login',
@@ -14,7 +13,7 @@ export class LoginComponent implements OnInit {
     user: User;
     auth: Auth;
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private router: Router) {
         this.user = new User();
         this.auth = new Auth();
     }
@@ -29,9 +28,18 @@ export class LoginComponent implements OnInit {
         this.http
             .post(loginEndPoint, data)
             .subscribe(
-                response => this.auth.storeToken(response.json().accessToken),
-                err => console.log("error")
-            );
+                response => this.loginSuccessful(response.json().accessToken),
+                err => this.loginFailure(err.json())
+            )
     }
 
+    loginSuccessful(token: string): void {
+        this.auth.storeToken(token);
+        this.auth.storeUser(this.user.username);
+        this.router.navigate(['dashboard']);
+    }
+
+    loginFailure(response: string): void {
+        console.log(response)
+    }
 }
